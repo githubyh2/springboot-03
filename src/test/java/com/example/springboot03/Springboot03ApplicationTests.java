@@ -12,6 +12,7 @@ class Springboot03ApplicationTests {
         // master分支增加
         System.out.println("master ----");
 
+        System.out.println("test---分支增加");
     }
 
 }
