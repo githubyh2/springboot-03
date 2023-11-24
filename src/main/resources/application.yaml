@@ -1,0 +1,20 @@
+server:
+  port: 8083
+
+spring:
+  web:
+    resources:
+      add-mappings: true
+
+
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 5   # 初始化的个数
+      max-active: 10    # 最大活跃数
+      max-wait: 3000    # 最大等待时间
+      min-idle: 5       # 最小的闲置个数
+      password: root123
+      url: jdbc:mysql://localhost:3306/yhtest?serverTimezone=Asia/Shanghai&serverTimezone=UTC&characterEncoding=UTF-8
+      username: root
+      type: com.alibaba.druid.pool.DruidDataSource
