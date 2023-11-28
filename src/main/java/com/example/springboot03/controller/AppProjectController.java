@@ -60,4 +60,13 @@ public class AppProjectController {
         return "sayHello......" + str;
     }
 
+    @GetMapping("/test01")
+    public void test01() {
+
+        // 获取虚拟机可用得最大处理器数量
+        int availableProcessors = Runtime.getRuntime().availableProcessors();
+
+        System.out.println("虚拟机可用的最大处理器数量是：" + availableProcessors);
+    }
+
 }
