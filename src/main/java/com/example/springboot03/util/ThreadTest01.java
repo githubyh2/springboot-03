@@ -15,8 +15,14 @@ public class ThreadTest01 {
         // 4、通过创建的对象调用start 方法
         sonThead.start();
 
+        Thread.currentThread().setName("main主线程:");
         // 如下操作仍然是在main()主线程中执行的
         System.out.println("Hello!");
+        for (int i = 0; i < 10; i++) {
+            if (i % 2 != 0) {
+                System.out.println(Thread.currentThread().getName() + ":" + i);
+            }
+        }
     }
 }
 
