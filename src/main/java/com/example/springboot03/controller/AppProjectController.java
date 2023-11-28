@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -67,6 +67,9 @@ public class AppProjectController {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
 
         System.out.println("虚拟机可用的最大处理器数量是：" + availableProcessors);
+
+        int maxValue = Integer.MAX_VALUE;  // 2147483647
+        System.out.println("===" + maxValue);
     }
 
 }
