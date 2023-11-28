@@ -11,6 +11,7 @@ public class ThreadTest01 {
         // 3、创建Thread类的子类的对象
         SonThead sonThead = new SonThead();
 
+        sonThead.setName("线程一");
         // 4、通过创建的对象调用start 方法
         sonThead.start();
 
@@ -26,7 +27,7 @@ class SonThead extends Thread {
     public void run() {
         for (int i = 0; i < 10; i++) {
             if (i % 2 == 0) {
-                System.out.println(i);
+                System.out.println(Thread.currentThread().getName() + ":" + i);
             }
         }
     }
