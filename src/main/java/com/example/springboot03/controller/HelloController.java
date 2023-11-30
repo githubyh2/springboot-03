@@ -1,4 +1,4 @@
-package com.example.springboot03.config.controller;
+package com.example.springboot03.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
