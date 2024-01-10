@@ -15,8 +15,21 @@
     <description>springboot-03</description>
     <properties>
         <java.version>8</java.version>
+        <mysql.version>8.0.28</mysql.version>
+        <druid.version>1.2.16</druid.version>
+        <mybatisPlus.version>3.5.3</mybatisPlus.version>
+        <fastjson.version>2.0.41</fastjson.version>
+        <swagger2.version>3.0.0</swagger2.version>
+        <jasypt.version>3.0.0</jasypt.version>
     </properties>
     <dependencies>
+
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>${jasypt.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -38,47 +51,50 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!-- springboot中使用测试依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
+        <!-- 连接mysql的依赖  -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.28</version>
+            <version>${mysql.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.2.16</version>
+            <version>${druid.version}</version>
         </dependency>
 
         <!-- mybatis-plus相关依赖 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.3</version>
+            <version>${mybatisPlus.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>2.0.41</version>
+            <version>${fastjson.version}</version>
         </dependency>
 
-        <!-- springboot 集成 swagger -->
+        <!-- springboot 集成 swagger2 -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>3.0.0</version>
+            <version>${swagger2.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0</version>
+            <version>${swagger2.version}</version>
         </dependency>
 
 
@@ -86,6 +102,7 @@
 
     <build>
         <plugins>
+            <!-- maven打包插件 -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

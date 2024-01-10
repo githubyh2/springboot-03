@@ -6,6 +6,8 @@ spring:
     resources:
       add-mappings: true
 
+  profiles:
+    include: secret  # 引入 application-secret.yml文件
 
   datasource:
     druid:
@@ -14,7 +16,15 @@ spring:
       max-active: 10    # 最大活跃数
       max-wait: 3000    # 最大等待时间
       min-idle: 5       # 最小的闲置个数
-      password: root123
-      url: jdbc:mysql://localhost:3306/yhtest?serverTimezone=Asia/Shanghai&serverTimezone=UTC&characterEncoding=UTF-8
-      username: root
+      password: ENC(81X1pN6a1bTHbloiTS8fVQ==)
+      url: jdbc:mysql://localhost:3306/employees?serverTimezone=Asia/Shanghai&serverTimezone=UTC&characterEncoding=UTF-8
+      username: ENC(9pUKQg1la6bPWLar82DfDg==)
       type: com.alibaba.druid.pool.DruidDataSource
+
+
+# 配置日志输出相关【能够在控制台输出执行的sql语句】
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
