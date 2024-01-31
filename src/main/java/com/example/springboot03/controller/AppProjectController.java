@@ -43,7 +43,8 @@ public class AppProjectController {
     @GetMapping("/testCount")
     public void testCount() {
         long count = appProjectService.count();
-        System.out.println("----" + count);
+//        System.out.println("----" + count);
+        log.info("----" + count);
     }
 
 
