@@ -10,17 +10,33 @@ spring:
     include: secret  # 引入 application-secret.yml文件
 
   datasource:
-    druid:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      initial-size: 5   # 初始化的个数
-      max-active: 10    # 最大活跃数
-      max-wait: 3000    # 最大等待时间
-      min-idle: 5       # 最小的闲置个数
-      password: ENC(81X1pN6a1bTHbloiTS8fVQ==)
-      url: jdbc:mysql://localhost:3306/employees?serverTimezone=Asia/Shanghai&serverTimezone=UTC&characterEncoding=UTF-8
-      username: ENC(9pUKQg1la6bPWLar82DfDg==)
-      type: com.alibaba.druid.pool.DruidDataSource
+    dynamic:
+      druid:
+        initial-size: 5   # 初始化的个数
+        max-active: 10    # 最大活跃数
+        max-wait: 3000    # 最大等待时间
+        min-idle: 5       # 最小的闲置个数
+      #设置默认的数据源或者数据源组,默认值即为master
+      primary: master
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          password: ENC(81X1pN6a1bTHbloiTS8fVQ==)
+          url: jdbc:mysql://localhost:3306/yhtest?serverTimezone=Asia/Shanghai&serverTimezone=UTC&characterEncoding=UTF-8
+          username: ENC(9pUKQg1la6bPWLar82DfDg==)
+          type: com.alibaba.druid.pool.DruidDataSource
 
+        slave:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          password: ENC(81X1pN6a1bTHbloiTS8fVQ==)
+          url: jdbc:mysql://localhost:3306/employees?serverTimezone=Asia/Shanghai&serverTimezone=UTC&characterEncoding=UTF-8
+          username: ENC(9pUKQg1la6bPWLar82DfDg==)
+          type: com.alibaba.druid.pool.DruidDataSource
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 # 配置日志输出相关【能够在控制台输出执行的sql语句】
 mybatis-plus:
@@ -29,5 +45,9 @@ mybatis-plus:
 
 AES:
   SECRET_KEY: ThisIsASecretKey
+
+# 文件存储路径
+FILE:
+  BASE_DIR: D:\tempFilePath\
 
 

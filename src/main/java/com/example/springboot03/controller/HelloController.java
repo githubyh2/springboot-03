@@ -1,5 +1,6 @@
 package com.example.springboot03.controller;
 
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.example.springboot03.bean.AesTestEntity;
 import com.example.springboot03.enum01.SexEnum;
 import com.example.springboot03.service.AesTestService;
@@ -24,6 +25,8 @@ public class HelloController {
     @RequestMapping("/sayHello")
     public String sayHello() {
         log.info("the method is called。。。。。");
+        long id = IdWorker.getId();
+        log.info("--" + id);
         return "hello,springboot!!!!";
     }
 
@@ -57,4 +60,5 @@ public class HelloController {
     public Boolean deleteTest(Long userId) {
         return aesTestService.removeById(userId);
     }
+
 }

@@ -1,5 +1,6 @@
 package com.example.springboot03.controller;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.springboot03.bean.Employees;
 import com.example.springboot03.dao.EmployeesMapper;
@@ -19,6 +20,7 @@ public class EmployesController {
     private EmployeesMapper employeesMapper;
 
 
+    @DS("slave")
     @GetMapping("/testWrapper")
     public void testWrapper() {
 

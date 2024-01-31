@@ -1,7 +1,6 @@
 package com.example.springboot03.controller;
 
 import com.example.springboot03.util.ExceptionMessage;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @data 2023/11/30
  * 全局异常处理器
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class GlobalExceptionHandleController {
     // 算术异常类处理：发生 除0 异常时，会执行该方法
     @ExceptionHandler(ArithmeticException.class)

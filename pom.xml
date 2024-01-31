@@ -21,6 +21,7 @@
         <fastjson.version>2.0.41</fastjson.version>
         <swagger2.version>3.0.0</swagger2.version>
         <jasypt.version>3.0.0</jasypt.version>
+        <trino.version>392</trino.version>
     </properties>
     <dependencies>
 
@@ -33,6 +34,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <!-- <version>3.0.0</version>-->
         </dependency>
 
         <dependency>
@@ -100,6 +107,20 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- springboot 连接 trino -->
+        <dependency>
+            <groupId>io.trino</groupId>
+            <artifactId>trino-jdbc</artifactId>
+            <version>${trino.version}</version>
+        </dependency>
+
+        <!-- 多数据源使用 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>4.1.0</version>
         </dependency>
 
 
