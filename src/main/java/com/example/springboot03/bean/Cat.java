@@ -16,6 +16,5 @@ import org.springframework.stereotype.Component;
 public class Cat {
     // 名字
     private String name;
-    // 年龄
     private Integer age;
 }
